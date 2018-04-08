@@ -1,2 +1,5 @@
 /virtenv
 /.vscode
+venv__pycache__
+venv/
+__pycache__/

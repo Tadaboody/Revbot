@@ -25,4 +25,5 @@ class Gif(abc.ABC):
         ...
 
     def write_reversed(self):
-        self.write_gif(os.path.join(self.dir, self.name + "_reversed"), self.reversed_frames)
+        name,ext = os.path.splitext(self.name)
+        self.write_gif(os.path.join(self.dir, name + "_reversed" + ext), self.reversed_frames)
