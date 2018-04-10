@@ -3,3 +3,4 @@
 venv__pycache__
 venv/
 __pycache__/
+oauth_info.json
