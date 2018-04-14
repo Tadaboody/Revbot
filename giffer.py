@@ -25,5 +25,13 @@ class Gif(abc.ABC):
         ...
 
     def write_reversed(self):
+        """ saves the reversed gif and returns the path"""
         name,ext = os.path.splitext(self.name)
-        self.write_gif(os.path.join(self.dir, name + "_reversed" + ext), self.reversed_frames)
+        new_path = os.path.join(self.dir, name + "_reversed" + ext) 
+        self.write_gif(new_path, self.reversed_frames)
+        return new_path
+    
+    @classmethod
+    @abc.abstractmethod
+    def from_url(cls,url:str): 
+        ...
