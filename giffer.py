@@ -7,7 +7,7 @@ class Gif(abc.ABC):
 
     def __init__(self, path):
         self.name = os.path.basename(path)
-        self.dir = os.path.dirname(path)
+        self.dir = 'gifs/'
         self.frames = self.extract_frames(path)
         self.path = path
     
@@ -30,8 +30,3 @@ class Gif(abc.ABC):
         new_path = os.path.join(self.dir, name + "_reversed" + ext) 
         self.write_gif(new_path, self.reversed_frames)
         return new_path
-    
-    @classmethod
-    @abc.abstractmethod
-    def from_url(cls,url:str): 
-        ...
