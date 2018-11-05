@@ -1,4 +1,3 @@
-import imageio
 import os.path
 import abc
 
